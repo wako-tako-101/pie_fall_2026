@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346308176}
   - component: {fileID: 346308177}
+  - component: {fileID: 346308178}
   m_Layer: 0
   m_Name: RHand
   m_TagString: Untagged
@@ -246,6 +247,20 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+--- !u!114 &346308178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346308175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07992a70b48ba704fb1c8f254cff2b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SigilCast
+  castSource: {fileID: 346308176}
+  activeSigilType: 4
 --- !u!1 &562426335
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,13 +288,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562426335}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 740755104}
   m_Father: {fileID: 346308176}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &562426337
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -543,11 +559,11 @@ Transform:
   m_GameObject: {fileID: 740755103}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.111}
-  m_LocalScale: {x: 0.005, y: 0.59, z: 0.005}
+  m_LocalPosition: {x: 0, y: 0, z: 4.46}
+  m_LocalScale: {x: 0.033333328, y: 3.9333339, z: 0.03333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1862013083}
+  m_Father: {fileID: 562426336}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!23 &740755106
 MeshRenderer:
@@ -619,7 +635,7 @@ GameObject:
   - component: {fileID: 1060543042}
   - component: {fileID: 1060543041}
   - component: {fileID: 1060543045}
-  - component: {fileID: 1060543046}
+  - component: {fileID: 1060543048}
   - component: {fileID: 1060543047}
   m_Layer: 0
   m_Name: Cube
@@ -734,18 +750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SigilTagsMono
   <SigilTag>k__BackingField: 4
---- !u!114 &1060543046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060543040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b89d3c482462cac4fa3a9ee09f04ff5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SigilResponse
 --- !u!54 &1060543047
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -773,6 +777,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1060543048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060543040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223ca59511f68d843bf38db77998b18c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectState
 --- !u!1 &1111751561
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,6 +1153,7 @@ GameObject:
   - component: {fileID: 1814771697}
   - component: {fileID: 1814771696}
   - component: {fileID: 1814771699}
+  - component: {fileID: 1814771700}
   m_Layer: 0
   m_Name: XR Origin (VR)
   m_TagString: Untagged
@@ -1624,7 +1641,7 @@ MonoBehaviour:
     m_ActionName: Android Mouse Interaction/Press
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1862013085}
+      - m_Target: {fileID: 346308178}
         m_TargetAssemblyTypeName: SigilCast, Assembly-CSharp
         m_MethodName: OnCast
         m_Mode: 0
@@ -1638,11 +1655,53 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c51035ba-90bb-4145-80b9-a9ed589afbe2
     m_ActionName: Gameplay/Cast
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1814771700}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cffd7dfd-bc47-4fa5-ab25-899f2226d721
+    m_ActionName: Gameplay/Move
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: XRI Head
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1814771700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814771695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c0459ff7b7e76447ad37bc16d8f3cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  head: {fileID: 688855625}
+  moveStick:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Move Stick
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 68ad276f-0c52-4aec-aeb1-8ba205076f08
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  speed: 2
 --- !u!1 &1862013082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,14 +1712,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1862013083}
   - component: {fileID: 1862013084}
-  - component: {fileID: 1862013085}
+  - component: {fileID: 1862013086}
   m_Layer: 0
   m_Name: CastBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1862013083
 Transform:
   m_ObjectHideFlags: 0
@@ -1673,8 +1732,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -0.558, z: 0.007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 740755104}
+  m_Children: []
   m_Father: {fileID: 346308176}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1862013084
@@ -1698,19 +1756,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.18335366, y: 0.1727699, z: 1.201993}
   m_Center: {x: 0.004380226, y: -0.00243932, z: 0.100996494}
---- !u!114 &1862013085
-MonoBehaviour:
+--- !u!54 &1862013086
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862013082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07992a70b48ba704fb1c8f254cff2b05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SigilCast
-  activeSigilType: 4
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2049111052
 GameObject:
   m_ObjectHideFlags: 0
