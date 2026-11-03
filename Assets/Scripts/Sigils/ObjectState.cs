@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ObjectStateTags
@@ -6,71 +5,70 @@ public class ObjectStateTags
     public enum States {Normal, Frozen, Shocked, WindControlled}
     
 }
+
+[RequireComponent(typeof(SigilTagsMono))]
 public class ObjectState : MonoBehaviour
 {
-    //references
-    Rigidbody objectRB;
-    SigilTagsMono sigTag;
     //system
     ObjectStateTags.States state = ObjectStateTags.States.Normal;
     //functions
     void Start()
     {
         //obtain rigidbody
-        if (TryGetComponent(out objectRB)){}
+        if (TryGetComponent(out Rigidbody objectRB)){}
         else Debug.LogWarning("No rigidbody detected for " + gameObject.name);
 
         //obtain sigil tag
-        if (TryGetComponent(out sigTag)){}
+        if (TryGetComponent(out SigilTagsMono sigTag)){}
         else Debug.LogError("No sigil tag associated with " + gameObject.name);
     }
-    public class ShockedState
+    public ObjectStateTags.States GetState()
     {
-       /*
-       //event for shock object ineractions
-       [field: SerializeField] ShockEvent;
+        return state;
+    }
+    public void SetState(ObjectStateTags.States newState)
+    {
+        state = newState;
+    }
+    public void Interact(GameObject caster, SigilTags.SigilTag sigilTag)
+    {
+        switch (sigilTag)
+        {
+            case SigilTags.SigilTag.Levitate:
+                if (TryGetComponent(out LevitateState levitateState))
+                {
+                    Debug.Log("Levitate state initiated for " + gameObject.name);
+                    levitateState.ChangeState(caster);
+                }
+                else Debug.LogError("No LevitateState script attached to " + gameObject.name);
+                break;
+            case SigilTags.SigilTag.Push:
+                break;
+            case SigilTags.SigilTag.Freeze:
+                break;
+            case SigilTags.SigilTag.Burn:
+                break;
+            case SigilTags.SigilTag.Electricute:
+                break;
+            default:
+                Debug.LogError("Invalid sigil tag for " + gameObject.name);
+                break;
+        }
+    }
+}
+public class ShockedState
+{
+    /*
+    //event for shock object ineractions
+    [field: SerializeField] ShockEvent;
 
-       //method for changing state of an interactable into shocked for a duration of time
-       ChangeState (duration t)
-       {
-            ObjectState.state = Shocked;
-            ShockEvent.Invoke();
-            Delay(t);
-            ObjectState.state = Normal;
-       }
-       */ 
-    }
-    public class LevitateState
+    //method for changing state of an interactable into shocked for a duration of time
+    ChangeState (duration t)
     {
-        /*
-        //bool to determine if still under sigil effect
-        bool windLifted;
-        //method for childing object to player controller or moving object in sync with controller
-        ChangeState()
-        {
-            if (!windLifted)
-            {
-                windLifted = true;
-                ObjectState.state = WindControlled;
-            }
-            else
-            {
-                windLifted = false;
-                ObjectState.state = Normal;
-            }
-        }
-        Update()
-        {
-            while(windLifted)
-            {
-                SyncMovement();
-            }
-        }
-        SyncMovement()
-        {
-            //responsible for setting position of object to pointer of controller
-            //or childing to player depending on desired effect
-        }
-        */
+        ObjectState.state = Shocked;
+        ShockEvent.Invoke();
+        Delay(t);
+        ObjectState.state = Normal;
     }
+    */ 
 }

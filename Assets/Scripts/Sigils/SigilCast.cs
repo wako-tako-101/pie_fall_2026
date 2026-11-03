@@ -10,29 +10,29 @@ public class SigilCast : MonoBehaviour
     {
         if (context.performed)
         {
-            Debug.Log("Attempting cast");
-
             Vector3 castOrigin = castSource.position;
             Vector3 castDirection = castSource.forward;
 
             RaycastHit hit;
             if (Physics.Raycast(castOrigin, castDirection, out hit, 5f))
             {
-                Debug.Log("Sending raycast");
                 //get the object that was hit
                 GameObject target = hit.collider.gameObject;
                 
                 //check if target is valid
-                if (!target.GetComponent<SigilTagsMono>())
+                if (target.TryGetComponent(out SigilTagsMono sigilTag) 
+                    && sigilTag.CompareSigilTag(activeSigilType))
                 {
-                    Debug.Log("Object Name: " + target.name + " not interactable");
+                    //get object state and initiate sigil interaction
+                    if (target.TryGetComponent(out ObjectState objState)) 
+                    {
+                        objState.Interact(gameObject, activeSigilType);
+                    }
+                    else Debug.LogError("No ObjectState script attached to " + target.name);
                 }
-                else if (target.GetComponent<SigilTagsMono>().CompareSigilTag(activeSigilType))
-                {
-                    Debug.Log("Object Name: " + target.name + ", Sigil Interaction: " + activeSigilType.ToString());
-                }
+                else Debug.Log("Target is not a valid sigil target");
             }
-            else Debug.Log("No object hit by the cast");
+            else Debug.Log("No object hit by sigil cast");
         }
     }
 }
