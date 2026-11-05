@@ -49,26 +49,16 @@ public class ObjectState : MonoBehaviour
             case SigilTags.SigilTag.Burn:
                 break;
             case SigilTags.SigilTag.Electricute:
+                if (TryGetComponent(out ShockedState shockedState))
+                {
+                    Debug.Log("Shocked state initiated for " + gameObject.name);
+                    shockedState.ChangeState(3f);//find solution for magic number later
+                }
+                else Debug.LogError("No ShockedState script attached to " + gameObject.name);
                 break;
             default:
                 Debug.LogError("Invalid sigil tag for " + gameObject.name);
                 break;
         }
     }
-}
-public class ShockedState
-{
-    /*
-    //event for shock object ineractions
-    [field: SerializeField] ShockEvent;
-
-    //method for changing state of an interactable into shocked for a duration of time
-    ChangeState (duration t)
-    {
-        ObjectState.state = Shocked;
-        ShockEvent.Invoke();
-        Delay(t);
-        ObjectState.state = Normal;
-    }
-    */ 
 }
