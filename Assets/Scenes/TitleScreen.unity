@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SigilCasters.SigilDrawer
   head: {fileID: 1576678678}
-  recognizer: {fileID: 0}
+  recognizer: {fileID: 739940102}
   caster: {fileID: 245470993}
   trail: {fileID: 1185505167}
   drawButton:
@@ -1247,6 +1247,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721837819}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &739940101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 739940103}
+  - component: {fileID: 739940102}
+  m_Layer: 0
+  m_Name: SigilRecognizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &739940102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739940101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c17d66eb7f554678a9bc03c0e44f8dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sigils.SigilRecognizer
+  includeBuiltInShapes: 1
+  bank: []
+  numPoints: 64
+  angleRangeDegrees: 45
+  anglePrecisionDegrees: 2
+  confidenceThreshold: 0.8
+--- !u!4 &739940103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739940101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995966336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,7 +1636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1185505166
 Transform:
   m_ObjectHideFlags: 0
@@ -2927,3 +2977,4 @@ SceneRoots:
   - {fileID: 2124899142}
   - {fileID: 1478783936}
   - {fileID: 1635314703}
+  - {fileID: 739940103}
