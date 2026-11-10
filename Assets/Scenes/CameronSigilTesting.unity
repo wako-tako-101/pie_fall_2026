@@ -259,7 +259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SigilCast
   castSource: {fileID: 562426336}
-  activeSigilType: 0
+  activeSigilType: 4
 --- !u!1 &562426335
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +635,7 @@ GameObject:
   - component: {fileID: 1060543045}
   - component: {fileID: 1060543048}
   - component: {fileID: 1060543049}
+  - component: {fileID: 1060543050}
   - component: {fileID: 1060543041}
   - component: {fileID: 1060543047}
   m_Layer: 0
@@ -749,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e70a298f7662274d89776be0fa605a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SigilTagsMono
-  <SigilTag>k__BackingField: 0
+  <SigilTag>k__BackingField: 4
 --- !u!54 &1060543047
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -801,6 +802,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbf615596ebe91488ec4340fe4fbbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevitateState
+  levitateSpeed: 6
+--- !u!114 &1060543050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060543040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a5398512c9038c41b65632534b2bd55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShockedState
+  ShockEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1111751561
 GameObject:
   m_ObjectHideFlags: 0
