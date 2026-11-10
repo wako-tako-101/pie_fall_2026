@@ -1015,6 +1015,8 @@ GameObject:
   m_Component:
   - component: {fileID: 434670016}
   - component: {fileID: 434670015}
+  - component: {fileID: 434670018}
+  - component: {fileID: 434670017}
   m_Layer: 0
   m_Name: Sigil Recognizer
   m_TagString: Untagged
@@ -1053,6 +1055,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434670017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434670014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce308e8aad1090f4b8118c2264483b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SigilImageTest
+  image: {fileID: 0}
+  traceGridSize: 96
+  inkThreshold: 0.5
+  unknownStartAndDirection: 1
+  logAllScores: 1
+--- !u!114 &434670018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434670014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4c981f381bf80f48b502856e73698d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SigilRecognizer
+  includeBuiltInShapes: 0
+  bank: []
+  numPoints: 64
+  angleRangeDegrees: 45
+  anglePrecisionDegrees: 2
+  confidenceThreshold: 0.8
 --- !u!1 &519336284
 GameObject:
   m_ObjectHideFlags: 0
