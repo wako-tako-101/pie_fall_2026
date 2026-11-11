@@ -380,8 +380,6 @@ GameObject:
   - component: {fileID: 245470991}
   - component: {fileID: 245470995}
   - component: {fileID: 245470994}
-  - component: {fileID: 245470993}
-  - component: {fileID: 245470992}
   - component: {fileID: 245470996}
   m_Layer: 0
   m_Name: Right Controller
@@ -407,80 +405,6 @@ Transform:
   - {fileID: 1185505166}
   m_Father: {fileID: 1608634369}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &245470992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245470990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95c570f15db01744eb34b1131a53a772, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SigilCasters.SigilDrawer
-  head: {fileID: 1576678678}
-  recognizer: {fileID: 739940102}
-  caster: {fileID: 245470993}
-  trail: {fileID: 1185505167}
-  drawButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Draw
-      m_Type: 0
-      m_ExpectedControlType: Button
-      m_Id: fd31d621-3a09-4938-b56c-9f3214d2b291
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: f1dddc5d-a406-4b73-9d03-57d13376cdc4
-        m_Path: <XRController>{RightHand}/{TriggerButton}
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Draw
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  minPoints: 10
---- !u!114 &245470993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 245470990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1fe61255ff6a544b004f6e944095ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SigilCasters.SpellCaster
-  castButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Cast
-      m_Type: 0
-      m_ExpectedControlType: Button
-      m_Id: fc767d63-7bea-43c4-bf3e-3f6160bb7763
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: d997d3ce-75b5-4d8a-a6c7-63cd911d05f5
-        m_Path: <XRController>{RightHand}/{GripButton}
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Cast
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  maxDistance: 10
-  loadedSpellName: 
-  unloadedColor: {r: 1, g: 1, b: 1, a: 0.2}
-  missColor: {r: 1, g: 0.3, b: 0.3, a: 1}
-  hitColor: {r: 0.3, g: 1, b: 0.4, a: 1}
 --- !u!120 &245470994
 LineRenderer:
   serializedVersion: 3
@@ -1019,6 +943,135 @@ MonoBehaviour:
     m_InputActionReference: {fileID: 0}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: 0
+--- !u!1 &335359139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335359140}
+  - component: {fileID: 335359141}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335359140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335359139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2057502384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &335359141
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335359139}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 51.558765
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &352387471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3734,7 +3787,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1890383951}
   - component: {fileID: 1890383950}
-  - component: {fileID: 1890383949}
   m_Layer: 0
   m_Name: XR Origin (XR Rig) (1)
   m_TagString: Untagged
@@ -3742,40 +3794,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1890383949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890383948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e16bf7d18ff41dc45bb195939eb90e7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SigilCasters.StickWalk
-  head: {fileID: 1576678678}
-  moveStick:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Move
-      m_Type: 0
-      m_ExpectedControlType: Vector2
-      m_Id: 37bd1238-a66b-428e-95f0-d8943d1b5aec
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: df2d68ec-a0f7-4594-bfa5-8afc79f5b793
-        m_Path: <XRController>{LeftHand}/{Primary2DAxis}
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Move
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  speed: 2
 --- !u!114 &1890383950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3807,6 +3825,38 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1608634369}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2057502383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057502384}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2057502384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057502383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 335359140}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124899137
@@ -3898,7 +3948,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1576678681}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3945,3 +3995,4 @@ SceneRoots:
   - {fileID: 1478783936}
   - {fileID: 1635314703}
   - {fileID: 739940103}
+  - {fileID: 2057502384}
