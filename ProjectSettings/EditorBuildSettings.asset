@@ -24,5 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/CreditsScene.unity
     guid: 81fbeb01bcbe5704584dd73718b8214b
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 718330fad79dd784fb6f4517e1024f50, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fd09001709e3f314fb6c31aa32f2143b, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5d40d53bcb64493448c84dacee89c7c4, type: 2}
