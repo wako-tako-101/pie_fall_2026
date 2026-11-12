@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using SigilClassifier;
 using UnityEngine;
@@ -14,6 +15,16 @@ namespace SigilCasting
         [SerializeField] LineRenderer stroke;
         [SerializeField] int minPoints = 10;
 
+        [Header("Stroke Fade")]
+        [Tooltip("Seconds the finished stroke stays fully visible before it starts fading.")]
+        [SerializeField, Min(0f)] float persistTime = 3f;
+        [Tooltip("How fast the stroke fades, in alpha per second. 1 = fades out over 1 second, 2 = over half a second.")]
+        [SerializeField, Min(0.01f)] float fadeSpeed = 1f;
+
+        //fade fields
+        Gradient baseGradient;
+        Coroutine fadeRoutine;
+
         //drawing feilds
         bool drawingActive = false;
         //stroke in world space
@@ -26,6 +37,8 @@ namespace SigilCasting
         {
             stroke.useWorldSpace = true;
             stroke.positionCount = 0;
+            //remember the line's original colors so the fade can be undone
+            baseGradient = stroke.colorGradient;
         }
         void Update()
         {
@@ -34,8 +47,42 @@ namespace SigilCasting
         }
         void ResetStroke()
         {
+            //cancel any fade in progress and restore full opacity
+            if (fadeRoutine != null)
+            {
+                StopCoroutine(fadeRoutine);
+                fadeRoutine = null;
+            }
+            SetStrokeAlpha(1f);
+
             strokePoints.Clear();
             stroke.positionCount = 0;
+        }
+        //scales the line's alpha, 1 = original look, 0 = invisible
+        void SetStrokeAlpha(float multiplier)
+        {
+            GradientAlphaKey[] alphaKeys = baseGradient.alphaKeys;
+            for (int i = 0; i < alphaKeys.Length; i++)
+                alphaKeys[i].alpha *= multiplier;
+
+            Gradient faded = new Gradient();
+            faded.SetKeys(baseGradient.colorKeys, alphaKeys);
+            stroke.colorGradient = faded;
+        }
+        IEnumerator FadeStroke()
+        {
+            yield return new WaitForSeconds(persistTime);
+
+            float alpha = 1f;
+            while (alpha > 0f)
+            {
+                alpha -= fadeSpeed * Time.deltaTime;
+                SetStrokeAlpha(Mathf.Clamp01(alpha));
+                yield return null;
+            }
+
+            fadeRoutine = null;
+            ResetStroke();
         }
         void StartStroke()
         {
@@ -59,6 +106,9 @@ namespace SigilCasting
         }
         void FinishStroke()
         {
+            //the stroke lingers, then fades, whether or not it was recognized
+            fadeRoutine = StartCoroutine(FadeStroke());
+
             if (strokePoints.Count < minPoints)
             {
                 Debug.Log("Stroke is too small");
@@ -81,7 +131,6 @@ namespace SigilCasting
                 cast.Load(result.Name);
             }
             else Debug.Log("Result did not pass the confidence threashold " + result.Name + " score: " + result.Score + " threashold " + recognizer.confidenceThreshold);
-            Invoke(nameof(strokePoints.Clear), 3f);
         }
         void FlattenStroke(out List<Vector2> flattenStroke)
         {
