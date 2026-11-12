@@ -4,7 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: 91e263bc65fff8040ae5799bec85ac88
+  - enabled: 1
+    path: Assets/Scenes/KristinaCopy.unity
+    guid: fe958358a216324438d547a4e5dfe96e
+  - enabled: 1
+    path: Assets/Scenes/GameplayScene.unity
+    guid: ea6b8daf463030d419b19146e9867ad7
+  - enabled: 1
+    path: Assets/Scenes/CameronSigilTesting.unity
+    guid: 15669ebb1f6ba7a4eb4a43e6ca33e354
+  - enabled: 1
+    path: Assets/Scenes/kristina_env.unity
+    guid: d6addd2108a1fc74a846b6ad04b659a2
+  - enabled: 1
+    path: Assets/Scenes/WarrickScene.unity
+    guid: 515781f782a34ba41a9a802b6bc60898
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: 81fbeb01bcbe5704584dd73718b8214b
   m_configObjects:
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 718330fad79dd784fb6f4517e1024f50, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: fd09001709e3f314fb6c31aa32f2143b, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5d40d53bcb64493448c84dacee89c7c4, type: 2}
