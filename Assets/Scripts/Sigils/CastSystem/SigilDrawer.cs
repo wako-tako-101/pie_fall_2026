@@ -27,6 +27,8 @@ namespace SigilCasting
 
         //drawing feilds
         bool drawingActive = false;
+        //true while the trigger is held and a stroke is being drawn
+        public bool IsDrawing => drawingActive;
         //stroke in world space
         readonly List<Vector3> strokePoints = new List<Vector3>();
         //page variables for the flattening process and orientation

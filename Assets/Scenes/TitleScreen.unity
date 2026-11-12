@@ -5031,7 +5031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1115494644141911528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6552,7 +6552,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611842944688216362}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6803edce0201f574f923fd9d10e5b30a, type: 3}
   m_Name: 
@@ -7139,8 +7139,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   m_InvalidColorGradient:
     serializedVersion: 2
-    key0: {r: 0.9150943, g: 0.35402766, b: 0.28057137, a: 1}
-    key1: {r: 1, g: 0, b: 0, a: 1}
+    key0: {r: 1, g: 1, b: 1, a: 0.7}
+    key1: {r: 1, g: 1, b: 1, a: 0}
     key2: {r: 0, g: 0, b: 0, a: 1}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -7155,8 +7155,8 @@ MonoBehaviour:
     ctime5: 0
     ctime6: 0
     ctime7: 0
-    atime0: 1542
-    atime1: 25829
+    atime0: 0
+    atime1: 65535
     atime2: 25829
     atime3: 0
     atime4: 0
@@ -7166,7 +7166,7 @@ MonoBehaviour:
     m_Mode: 2
     m_ColorSpace: 0
     m_NumColorKeys: 2
-    m_NumAlphaKeys: 3
+    m_NumAlphaKeys: 2
   m_BlockedColorGradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.9733143, b: 0.6650944, a: 1}
@@ -7209,8 +7209,8 @@ MonoBehaviour:
   m_LineBendRatio: 1
   m_BendingEnabledInteractionLayers:
     m_Bits: 4294967295
-  m_OverrideInteractorLineOrigin: 1
-  m_LineOriginTransform: {fileID: 2179197054400957043}
+  m_OverrideInteractorLineOrigin: 0
+  m_LineOriginTransform: {fileID: 0}
   m_LineOriginOffset: 0
 --- !u!114 &5692246174544291128
 MonoBehaviour:
@@ -7440,7 +7440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &5793904952017850197
 GameObject:
   m_ObjectHideFlags: 0
@@ -9189,13 +9189,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9028408133239946907}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -1.3, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8793217321831864012}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9018804847952040806
 MonoBehaviour:
   m_ObjectHideFlags: 0
