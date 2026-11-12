@@ -16,7 +16,7 @@ namespace SigilCasting
         [SerializeField] int minPoints = 10;
 
         [Header("Stroke Fade")]
-        [Tooltip("Seconds the finished stroke stays fully visible before it starts fading.")]
+        [Tooltip("Seconds an unrecognized stroke stays fully visible before it starts fading. A recognized sigil stays until it is saved or discarded.")]
         [SerializeField, Min(0f)] float persistTime = 3f;
         [Tooltip("How fast the stroke fades, in alpha per second. 1 = fades out over 1 second, 2 = over half a second.")]
         [SerializeField, Min(0.01f)] float fadeSpeed = 1f;
@@ -24,6 +24,7 @@ namespace SigilCasting
         //fade fields
         Gradient baseGradient;
         Coroutine fadeRoutine;
+        SigilCast cast;
 
         //drawing feilds
         bool drawingActive = false;
@@ -41,6 +42,7 @@ namespace SigilCasting
             stroke.positionCount = 0;
             //remember the line's original colors so the fade can be undone
             baseGradient = stroke.colorGradient;
+            cast = GetComponent<SigilCast>();
         }
         void Update()
         {
@@ -71,9 +73,15 @@ namespace SigilCasting
             faded.SetKeys(baseGradient.colorKeys, alphaKeys);
             stroke.colorGradient = faded;
         }
-        IEnumerator FadeStroke()
+        //fades the stroke away right now, used when a sigil is saved or discarded
+        public void FadeOutStroke()
         {
-            yield return new WaitForSeconds(persistTime);
+            if (fadeRoutine != null) StopCoroutine(fadeRoutine);
+            fadeRoutine = StartCoroutine(FadeStroke(0f));
+        }
+        IEnumerator FadeStroke(float delay)
+        {
+            if (delay > 0f) yield return new WaitForSeconds(delay);
 
             float alpha = 1f;
             while (alpha > 0f)
@@ -89,6 +97,8 @@ namespace SigilCasting
         void StartStroke()
         {
             ResetStroke();
+            //drawing again throws away a sigil that was waiting to be saved
+            if (cast != null) cast.ClearPending();
 
             //places the page infront of the player
             //"page" is held in place even is player moves
@@ -108,12 +118,10 @@ namespace SigilCasting
         }
         void FinishStroke()
         {
-            //the stroke lingers, then fades, whether or not it was recognized
-            fadeRoutine = StartCoroutine(FadeStroke());
-
             if (strokePoints.Count < minPoints)
             {
                 Debug.Log("Stroke is too small");
+                fadeRoutine = StartCoroutine(FadeStroke(persistTime));
                 return;
             }
 
@@ -126,13 +134,16 @@ namespace SigilCasting
             //print results
             Debug.Log("Top result: " + result.Name);
 
-            //load result
+            //hold the result until the player saves or discards it
+            //the stroke stays on screen while it waits, SigilCast fades it after
             if (result.IsConfident(recognizer.confidenceThreshold))
             {
-                var cast = GetComponent<SigilCast>();
-                cast.Load(result.Name);
+                if (cast != null && cast.Propose(result.Name)) return;
             }
             else Debug.Log("Result did not pass the confidence threashold " + result.Name + " score: " + result.Score + " threashold " + recognizer.confidenceThreshold);
+
+            //nothing to confirm, so the stroke lingers and then fades by itself
+            fadeRoutine = StartCoroutine(FadeStroke(persistTime));
         }
         void FlattenStroke(out List<Vector2> flattenStroke)
         {

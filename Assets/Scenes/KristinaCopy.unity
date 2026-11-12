@@ -30948,6 +30948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3186226347317477537}
   - component: {fileID: 6151886382105733881}
+  - component: {fileID: 7946399845713601864}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Untagged
@@ -30984,3 +30985,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SigilCasting.WandOrb
   drawer: {fileID: 7733879587561840636}
   orbShader: {fileID: 4800000, guid: 5c1e0b7a94d24f3e8a6b2d1f7c3e9a41, type: 3}
+--- !u!114 &7946399845713601864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6168889490542430011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a9c1d7b3f24860a2d5c8e1f7b09a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SigilCasting.SigilChargeEffect
+  particleShader: {fileID: 4800000, guid: 2b7d4e9c6a1f4c38a5e0d3b8f1c6a972, type: 3}

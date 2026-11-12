@@ -3,7 +3,9 @@ using UnityEngine;
 namespace SigilInteractions
 {    public static class SigilTags
     {
-        public enum SigilTag {Levitate, Push, Freeze,  Burn, Electricute}
+        //None means no sigil is loaded
+        //scenes save these by number, so add new sigils at the end and never reorder them
+        public enum SigilTag {Levitate, Push, Freeze,  Burn, Electricute, None}
     }
     public class SigilTagsMono : MonoBehaviour
     {
