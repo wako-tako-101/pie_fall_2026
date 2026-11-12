@@ -23016,6 +23016,7 @@ GameObject:
   - component: {fileID: 7601707873001874814}
   - component: {fileID: 6398902887974036929}
   - component: {fileID: 7601707873001874815}
+  - component: {fileID: 7601707873001874816}
   m_Layer: 3
   m_Name: plate
   m_TagString: Wind
@@ -23035,6 +23036,7 @@ GameObject:
   - component: {fileID: 7601707871421552881}
   - component: {fileID: 6398902889605470286}
   - component: {fileID: 7601707871421552882}
+  - component: {fileID: 7601707871421552883}
   m_Layer: 3
   m_Name: plate
   m_TagString: Earth
@@ -23054,6 +23056,7 @@ GameObject:
   - component: {fileID: 7601707871695138656}
   - component: {fileID: 6398902888811540447}
   - component: {fileID: 7601707871695138657}
+  - component: {fileID: 7601707871695138658}
   m_Layer: 3
   m_Name: plate
   m_TagString: Fire
@@ -23073,6 +23076,7 @@ GameObject:
   - component: {fileID: 7601707871851927166}
   - component: {fileID: 6398902888839419585}
   - component: {fileID: 7601707871851927167}
+  - component: {fileID: 7601707871851927168}
   m_Layer: 3
   m_Name: plate
   m_TagString: Water
@@ -25699,6 +25703,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 434.6034, y: 55.570408, z: 443.0402}
   m_Center: {x: 217.3017, y: 27.785204, z: 221.52005}
+--- !u!114 &7601707871421552883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783464644327267748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95a52bae80828f4996a10597a7bfc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
+  pressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 373262434}
+        m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+        m_MethodName: EarthPlateDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &7601707871695138656
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25728,6 +25759,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 434.6034, y: 55.570408, z: 443.0402}
   m_Center: {x: 217.3017, y: 27.785204, z: 221.52005}
+--- !u!114 &7601707871695138658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783464644594821685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95a52bae80828f4996a10597a7bfc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
+  pressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 373262434}
+        m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+        m_MethodName: FirePlateDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &7601707871851927166
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25757,6 +25815,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 434.6034, y: 55.570408, z: 443.0402}
   m_Center: {x: 217.3017, y: 27.785204, z: 221.52005}
+--- !u!114 &7601707871851927168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783464644634039083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95a52bae80828f4996a10597a7bfc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
+  pressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 373262434}
+        m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+        m_MethodName: WaterPlateDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &7601707873001874814
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -25786,6 +25871,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 434.6034, y: 55.570408, z: 443.0402}
   m_Center: {x: 217.3017, y: 27.785204, z: 221.52005}
+--- !u!114 &7601707873001874816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6783464643751977003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b95a52bae80828f4996a10597a7bfc5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PressurePlate
+  pressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 373262434}
+        m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+        m_MethodName: WindPlateDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &7608605978493471281
 BoxCollider:
   m_ObjectHideFlags: 0

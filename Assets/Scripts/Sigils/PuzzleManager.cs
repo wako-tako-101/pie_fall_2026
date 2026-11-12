@@ -15,4 +15,20 @@ public class PuzzleManager : MonoBehaviour
             door.SetActive(false);
         }
     }
+    public void FirePlateDown()
+    {
+        FirePlate = true;
+    }
+    public void WaterPlateDown()
+    {
+        WaterPlate = true;
+    }
+    public void EarthPlateDown()
+    {
+        EarthPlate = true;
+    }
+    public void WindPlateDown()
+    {
+        WindPlate = true;
+    }
 }
