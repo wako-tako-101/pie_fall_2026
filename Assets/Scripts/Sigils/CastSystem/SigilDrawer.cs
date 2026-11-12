@@ -14,6 +14,8 @@ namespace SigilCasting
         [SerializeField] SigilRecognizer recognizer;
         [SerializeField] LineRenderer stroke;
         [SerializeField] int minPoints = 10;
+        [Tooltip("How far in front of the draw point the sigil is drawn, in meters. 0 draws right at the draw point.")]
+        [SerializeField, Min(0f)] float drawDistance = 0f;
 
         [Header("Stroke Fade")]
         [Tooltip("Seconds an unrecognized stroke stays fully visible before it starts fading. A recognized sigil stays until it is saved or discarded.")]
@@ -111,10 +113,11 @@ namespace SigilCasting
             //since script is placed on hand, the transform
             //is inside hand
             //change this later so stroke appears infront of hand
-            strokePoints.Add(drawPoint.position);
+            Vector3 point = drawPoint.position + drawPoint.forward * drawDistance;
+            strokePoints.Add(point);
 
             stroke.positionCount = strokePoints.Count;
-            stroke.SetPosition(strokePoints.Count - 1, drawPoint.position);
+            stroke.SetPosition(strokePoints.Count - 1, point);
         }
         void FinishStroke()
         {
