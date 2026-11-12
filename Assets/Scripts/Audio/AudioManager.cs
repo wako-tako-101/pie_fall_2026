@@ -23,15 +23,15 @@ public class AudioManager : MonoBehaviour
 
 
     [Header("Volume Settings")]
-    [Range(0f, 1f)]
+    //[Range(0f, 1f)]
     [SerializeField] private Slider musicVolumeSlider;
     [SerializeField] private float musicVolume = 0.5f;
 
-    [Range(0f, 1f)]
+    //[Range(0f, 1f)]
     [SerializeField] private Slider sfxVolumeSlider;
     [SerializeField] private float sfxVolume = 0.5f;
 
-    [Range(0f, 1f)]
+    //[Range(0f, 1f)]
     [SerializeField] private Slider allVolumeSlider;
     [SerializeField] private float allVolume = 0.5f;
 
