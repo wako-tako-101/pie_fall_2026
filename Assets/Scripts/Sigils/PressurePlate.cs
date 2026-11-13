@@ -1,16 +1,15 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PressurePlate : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] public UnityEvent SuccessfullPress;
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (gameObject.CompareTag(other.tag))
+        {
+            SuccessfullPress.Invoke();
+        }
     }
 }

@@ -15,4 +15,9 @@ public class PuzzleManager : MonoBehaviour
             door.SetActive(false);
         }
     }
+    public void WindPlatePressed() => WindPlate = true;
+    public void EarthPlatePressed() => EarthPlate = true;
+    public void WaterPlatePressed() => WaterPlate = true;
+    public void FirePlatePressed() => FirePlate = true;
+
 }

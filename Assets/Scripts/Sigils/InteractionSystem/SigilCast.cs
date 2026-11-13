@@ -124,12 +124,8 @@ namespace SigilCasting
                 targetPoint = hit.point;
             }
 
-            //the sigil is used up by the cast, whether or not it lands
-            SigilTags.SigilTag castSigil = activeSigilType;
-            activeSigilType = SigilTags.SigilTag.None;
-
-            if (chargeEffect != null) chargeEffect.Launch(castSigil, targetPoint, target, () => Resolve(castSigil, target));
-            else Resolve(castSigil, target);
+            if (chargeEffect != null) chargeEffect.Launch(ActiveSigil, targetPoint, target, () => Resolve(ActiveSigil, target));
+            else Resolve(ActiveSigil, target);
         }
         //applies the sigil to the target, returns true if it worked
         bool Resolve(SigilTags.SigilTag sigil, GameObject target)
@@ -137,6 +133,7 @@ namespace SigilCasting
             if (target == null)
             {
                 Debug.Log("No object hit by sigil cast");
+                activeSigilType = SigilTags.SigilTag.None;
                 return false;
             }
 
@@ -144,9 +141,25 @@ namespace SigilCasting
             if (target.TryGetComponent(out SigilTagsMono sigilTag)
                 && sigilTag.CompareSigilTag(sigil))
             {
+                //if the sigil is levitate and used on levitate object
+                //if levitate object is activly levitated clear tag
+                //if object has not been levitated yet keep tag active
+                //else reset sigil
+
                 //get object state and initiate sigil interaction
                 if (target.TryGetComponent(out ObjectState objState))
                 {
+                    //clear active sigil
+                    //check if it needs to be cleared upon use or on deactivation
+                    if (sigilTag.CompareSigilTag(SigilTags.SigilTag.Levitate))
+                    {
+                        if (objState.GetState() == ObjectStateTags.States.WindControlled)
+                        {
+                            activeSigilType = SigilTags.SigilTag.None;
+                        }
+                    }
+                    else activeSigilType = SigilTags.SigilTag.None;
+
                     objState.Interact(gameObject, sigil);
                     return true;
                 }
@@ -155,6 +168,7 @@ namespace SigilCasting
             }
 
             Debug.Log("Target is not a valid sigil target");
+            activeSigilType = SigilTags.SigilTag.None;
             return false;
         }
     }
