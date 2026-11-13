@@ -159,8 +159,18 @@ namespace SigilCasting
                 flattenStroke.Add(new Vector2(x, y));
             }
         }
+        void OnDisable()
+        {
+            //a stroke in progress is dropped if drawing gets turned off, like when a menu opens
+            if (!drawingActive) return;
+            drawingActive = false;
+            ResetStroke();
+        }
         public void OnDraw(InputAction.CallbackContext context)
         {
+            //input events still arrive while disabled, so ignore them here
+            if (!isActiveAndEnabled) return;
+
             if (context.started)
             {
                 StartStroke();

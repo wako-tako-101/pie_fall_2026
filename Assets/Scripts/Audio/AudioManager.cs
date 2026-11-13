@@ -147,101 +147,126 @@ public class AudioManager : MonoBehaviour
     }
 
     //VOLUME
-    public void UpdateVolume()
+    //the three volumes live in the fields above, the sliders only edit them
+    private void ApplyVolume()
     {
-        musicSource.volume = musicVolumeSlider.value * allVolumeSlider.value;
-        sfxSource.volume = sfxVolumeSlider.value * allVolumeSlider.value;
+        musicSource.volume = musicVolume * allVolume;
+        sfxSource.volume = sfxVolume * allVolume;
 
         musicSource.mute = isMuted;
         sfxSource.mute = isMuted;
-        
-        musicVolume = musicVolumeSlider.value;
-        sfxVolume = sfxVolumeSlider.value;
-        allVolume = allVolumeSlider.value;
+    }
+
+    //reads whichever sliders are connected, then applies the result
+    public void UpdateVolume()
+    {
+        if(musicVolumeSlider != null) musicVolume = musicVolumeSlider.value;
+        if(sfxVolumeSlider != null) sfxVolume = sfxVolumeSlider.value;
+        if(allVolumeSlider != null) allVolume = allVolumeSlider.value;
+
+        ApplyVolume();
     }
 
     public void SetVolume(float musicVolume, float sfxVolume, float allVolume)
     {
-        musicVolume = Mathf.Clamp01(musicVolume);
-        sfxVolume = Mathf.Clamp01(sfxVolume);
-        allVolume = Mathf.Clamp01(allVolume);
+        this.musicVolume = Mathf.Clamp01(musicVolume);
+        this.sfxVolume = Mathf.Clamp01(sfxVolume);
+        this.allVolume = Mathf.Clamp01(allVolume);
 
-        musicVolumeSlider.value = musicVolume;
-        sfxVolumeSlider.value = sfxVolume;
-        allVolumeSlider.value = allVolume;
+        ApplyVolume();
+        SyncSliders();
+    }
 
-        UpdateVolume();
-        if(musicVolumeSlider != null) musicVolumeSlider.SetValueWithoutNotify(musicVolume);
-        if(sfxVolumeSlider != null) sfxVolumeSlider.SetValueWithoutNotify(sfxVolume);
-        if(allVolumeSlider != null) allVolumeSlider.SetValueWithoutNotify(allVolume);
+    //each slider only ever changes its own volume
+    public void SetMusicVolume(float value)
+    {
+        musicVolume = Mathf.Clamp01(value);
+        ApplyVolume();
+    }
 
+    public void SetSfxVolume(float value)
+    {
+        sfxVolume = Mathf.Clamp01(value);
+        ApplyVolume();
+    }
+
+    public void SetAllVolume(float value)
+    {
+        allVolume = Mathf.Clamp01(value);
+        ApplyVolume();
     }
 
     //Mute/Unmute
     public void SetMute(bool isMuted)
     {
         this.isMuted = isMuted;
-        UpdateVolume();
+        ApplyVolume();
     }
 
     //Slider Logic
-    public void ConnectSlider(Slider slider)
+    //hooks up the sliders of whichever menu is on screen, pass null for any that are missing
+    public void ConnectSliders(Slider music, Slider sfx, Slider all)
     {
-        if(musicVolumeSlider != null) musicVolumeSlider.onValueChanged.RemoveListener((value) => SetVolume(value, sfxVolume, allVolume));
-        musicVolumeSlider = slider;
+        DisconnectSliders();
 
-        if(musicVolumeSlider != null)
-        {
-            musicVolumeSlider.minValue = 0f;
-            musicVolumeSlider.maxValue = 1f;
-            musicVolumeSlider.wholeNumbers = false;
+        musicVolumeSlider = music;
+        sfxVolumeSlider = sfx;
+        allVolumeSlider = all;
 
-            musicVolumeSlider.SetValueWithoutNotify(musicVolume);
-            musicVolumeSlider.onValueChanged.AddListener((value) => SetVolume(value, sfxVolume, allVolume));
-        }
+        SetupSlider(musicVolumeSlider, musicVolume, SetMusicVolume);
+        SetupSlider(sfxVolumeSlider, sfxVolume, SetSfxVolume);
+        SetupSlider(allVolumeSlider, allVolume, SetAllVolume);
+    }
 
-        if(sfxVolumeSlider != null) sfxVolumeSlider.onValueChanged.RemoveListener((value) => SetVolume(musicVolume, value, allVolume));
-        sfxVolumeSlider = slider;
-        if(sfxVolumeSlider != null)
-        {
-            sfxVolumeSlider.minValue = 0f;
-            sfxVolumeSlider.maxValue = 1f;
-            sfxVolumeSlider.wholeNumbers = false;
+    public void DisconnectSliders()
+    {
+        if(musicVolumeSlider != null) musicVolumeSlider.onValueChanged.RemoveListener(SetMusicVolume);
+        if(sfxVolumeSlider != null) sfxVolumeSlider.onValueChanged.RemoveListener(SetSfxVolume);
+        if(allVolumeSlider != null) allVolumeSlider.onValueChanged.RemoveListener(SetAllVolume);
 
-            sfxVolumeSlider.SetValueWithoutNotify(sfxVolume);
-            sfxVolumeSlider.onValueChanged.AddListener((value) => SetVolume(musicVolume, value, allVolume));
-        }
+        musicVolumeSlider = null;
+        sfxVolumeSlider = null;
+        allVolumeSlider = null;
+    }
 
-        if(allVolumeSlider != null) allVolumeSlider.onValueChanged.RemoveListener((value) => SetVolume(musicVolume, sfxVolume, value));
-        allVolumeSlider = slider;
-        if(allVolumeSlider != null)
-        {
-            allVolumeSlider.minValue = 0f;
-            allVolumeSlider.maxValue = 1f;
-            allVolumeSlider.wholeNumbers = false;
+    private void SetupSlider(Slider slider, float value, UnityEngine.Events.UnityAction<float> onChanged)
+    {
+        if(slider == null) return;
 
-            allVolumeSlider.SetValueWithoutNotify(allVolume);
-            allVolumeSlider.onValueChanged.AddListener((value) => SetVolume(musicVolume, sfxVolume, value));
-        }
+        slider.minValue = 0f;
+        slider.maxValue = 1f;
+        slider.wholeNumbers = false;
+
+        //show the saved volume without firing the listener
+        slider.SetValueWithoutNotify(value);
+        slider.onValueChanged.AddListener(onChanged);
+    }
+
+    private void SyncSliders()
+    {
+        if(musicVolumeSlider != null) musicVolumeSlider.SetValueWithoutNotify(musicVolume);
+        if(sfxVolumeSlider != null) sfxVolumeSlider.SetValueWithoutNotify(sfxVolume);
+        if(allVolumeSlider != null) allVolumeSlider.SetValueWithoutNotify(allVolume);
     }
 
     private void OnDestroy()
     {
-        if(musicVolumeSlider != null) musicVolumeSlider.onValueChanged.RemoveListener((value) => SetVolume(value, sfxVolume, allVolume));
-        if(sfxVolumeSlider != null) sfxVolumeSlider.onValueChanged.RemoveListener((value) => SetVolume(musicVolume, value, allVolume));
-        if(allVolumeSlider != null) allVolumeSlider.onValueChanged.RemoveListener((value) => SetVolume(musicVolume, sfxVolume, value));
-        if(instance == this) instance = null;
+        //a duplicate manager never became the instance, so it has nothing to unhook
+        if(instance != this) return;
+
+        DisconnectSliders();
+        instance = null;
     }
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        musicSource.volume = musicVolumeSlider.value * allVolumeSlider.value;
-        sfxSource.volume = sfxVolumeSlider.value * allVolumeSlider.value;
         musicSource.loop = isLooping;
-        musicSource.mute = isMuted;
         sfxSource.loop = isLooping;
-        sfxSource.mute = isMuted;
+
+        //the saved volumes are the source of truth, not wherever the sliders happen to sit
+        ConnectSliders(musicVolumeSlider, sfxVolumeSlider, allVolumeSlider);
+        ApplyVolume();
     }
 }

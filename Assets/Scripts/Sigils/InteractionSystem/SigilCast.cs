@@ -98,7 +98,8 @@ namespace SigilCasting
         }
         public void OnCast(InputAction.CallbackContext context)
         {
-            if (!context.performed) return;
+            //input events still arrive while disabled, so ignore them here
+            if (!context.performed || !isActiveAndEnabled) return;
 
             //the cast button first saves a freshly drawn sigil
             if (HasPendingSigil)

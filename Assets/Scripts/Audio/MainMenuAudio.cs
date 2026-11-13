@@ -6,11 +6,12 @@ public class MainMenuAudio : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        AudioManager.instance.PlayMusic(musicClip);
+        //no manager when a scene is played on its own, and menus without music leave the clip empty
+        if(AudioManager.instance != null && !string.IsNullOrEmpty(musicClip)) AudioManager.instance.PlayMusic(musicClip);
     }
 
     public void ButtonAudio()
     {
-        AudioManager.instance.PlaySFX(sfxClip);
+        if(AudioManager.instance != null) AudioManager.instance.PlaySFX(sfxClip);
     }
 }
