@@ -3962,7 +3962,7 @@
                 {
                     "name": "",
                     "id": "faccabbd-275c-45f3-a3e2-b82acf592faf",
-                    "path": "<XRController>{RightHand}/{SecondaryButton}",
+                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
