@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace SigilInteractions
 {
@@ -10,6 +11,8 @@ namespace SigilInteractions
         Vector3 offset;
         bool inPosition = false;
         [SerializeField] float levitateSpeed = 6f;
+        [SerializeField] UnityEvent levitateStart;
+        [SerializeField] UnityEvent levitateEnd;
         public void ChangeState(GameObject caster)
         {
             TryGetComponent(out ObjectState objState);
@@ -18,6 +21,7 @@ namespace SigilInteractions
             {
                 //if not in a wind controlled state, initiate said state
                 objState.SetState(ObjectStateTags.States.WindControlled);
+                levitateStart.Invoke();
                 
                 //start wind control sequence
                 InitiateWindControl(caster);           
@@ -30,6 +34,7 @@ namespace SigilInteractions
             {
                 //when no longer wind controlled return state to normal
                 objState.SetState(ObjectStateTags.States.Normal);
+                levitateEnd.Invoke();
                 
                 //reset inPosition flag
                 inPosition = false;
