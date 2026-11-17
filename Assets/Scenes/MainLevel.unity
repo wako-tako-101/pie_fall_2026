@@ -404,6 +404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind
       objectReference: {fileID: 0}
+    - target: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6743247984693381165, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 200
@@ -465,6 +469,10 @@ PrefabInstance:
     - target: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
       propertyPath: m_Name
       value: Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6743247984693381165, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
       propertyPath: m_LocalScale.x
@@ -650,7 +658,7 @@ GameObject:
   - component: {fileID: 373262428}
   - component: {fileID: 373262427}
   - component: {fileID: 373262434}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Terminal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,6 +1000,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 536.54736, y: 19.233309, z: 536.54736}
   m_Center: {x: 268.27368, y: 9.616654, z: 268.27368}
+--- !u!1 &513534134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+  m_PrefabInstance: {fileID: 302568842}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &574152168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1226,10 @@ PrefabInstance:
     - target: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
       propertyPath: m_Name
       value: Wind
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6743247984693381165, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1665,6 +1682,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1544920465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+  m_PrefabInstance: {fileID: 7430962086177897053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1544920466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6743247984693381165, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
@@ -1716,6 +1738,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1574269516 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+  m_PrefabInstance: {fileID: 176525247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1616539981
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,7 +2056,7 @@ GameObject:
   - component: {fileID: 1824235495}
   - component: {fileID: 1824235497}
   - component: {fileID: 1824235496}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11692,6 +11719,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &2005314924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+  m_PrefabInstance: {fileID: 892452145}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2084100255
 GameObject:
   m_ObjectHideFlags: 0
@@ -13608,7 +13640,7 @@ Transform:
   m_GameObject: {fileID: 919132147933550131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -3.1, z: -0.04}
+  m_LocalPosition: {x: 5.27, y: -4.25, z: -0.04}
   m_LocalScale: {x: 0.004621443, y: 0.004621443, z: 0.004621443}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13624,7 +13656,7 @@ Transform:
   m_GameObject: {fileID: 919132148278554668}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.43, y: -3.035, z: -6.45}
+  m_LocalPosition: {x: -0.21, y: -4.35, z: -6.42}
   m_LocalScale: {x: 0.004621443, y: 0.004621443, z: 0.004621443}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13691,7 +13723,7 @@ Transform:
   m_GameObject: {fileID: 919132149623918378}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.4361, y: -3.27, z: 0.05}
+  m_LocalPosition: {x: 5.4361, y: -4.21, z: -6.57}
   m_LocalScale: {x: 0.004621443, y: 0.004621443, z: 0.004621443}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13707,7 +13739,7 @@ Transform:
   m_GameObject: {fileID: 919132149608109472}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.06, y: -2.96, z: -6.74}
+  m_LocalPosition: {x: 0.3, y: -4.13, z: -0.15}
   m_LocalScale: {x: 0.004621443, y: 0.004621443, z: 0.004621443}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23669,10 +23701,34 @@ MonoBehaviour:
   levitateSpeed: 6
   levitateStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1574269516}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   levitateEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1574269516}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3469287837122615865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23769,10 +23825,34 @@ MonoBehaviour:
   levitateSpeed: 6
   levitateStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2005314924}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   levitateEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2005314924}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3469287837129965763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23869,10 +23949,34 @@ MonoBehaviour:
   levitateSpeed: 6
   levitateStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 513534134}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   levitateEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 513534134}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3469287837730849584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23969,10 +24073,34 @@ MonoBehaviour:
   levitateSpeed: 6
   levitateStart:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1544920465}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   levitateEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1544920465}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3469287838467990839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38908,6 +39036,10 @@ PrefabInstance:
     - target: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893056722746370711, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6743247984693381165, guid: ac7d06f5c9f35b145965cabb0ad0a99b, type: 3}
       propertyPath: m_LocalScale.x
