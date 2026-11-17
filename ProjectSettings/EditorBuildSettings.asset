@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 91e263bc65fff8040ae5799bec85ac88
   - enabled: 1
-    path: Assets/Scenes/KristinaCopy.unity
+    path: Assets/Scenes/MainLevel.unity
     guid: fe958358a216324438d547a4e5dfe96e
   - enabled: 1
     path: Assets/Scenes/GameplayScene.unity

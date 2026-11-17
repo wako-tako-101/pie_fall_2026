@@ -1,0 +1,3 @@
+John Doe: This is a test. Testing the dialogue. Lets see how this works. \n This is still line one
+This is a new line of the same speaker.
+Jane Doe: This should be a new speaker. This is the end of dialogue. Yay

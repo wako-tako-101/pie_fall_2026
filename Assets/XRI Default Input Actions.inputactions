@@ -116,7 +116,7 @@
                 {
                     "name": "",
                     "id": "30a88e64-475a-4a1c-aca0-80b6a2bc3327",
-                    "path": "<HandheldARInputDevice>/deviceRotation",
+                    "path": "<XRController>{LeftHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
