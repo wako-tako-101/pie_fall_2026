@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 326823221}
   - component: {fileID: 326823220}
   - component: {fileID: 326823223}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1634,7 +1634,7 @@ GameObject:
   - component: {fileID: 741479756}
   - component: {fileID: 741479758}
   - component: {fileID: 741479757}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: SpeechBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1772,7 +1772,7 @@ GameObject:
   - component: {fileID: 1063814367}
   - component: {fileID: 1063814366}
   - component: {fileID: 1063814365}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1892,7 +1892,7 @@ GameObject:
   - component: {fileID: 1218951886}
   - component: {fileID: 1218951888}
   - component: {fileID: 1218951887}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2256,7 +2256,7 @@ GameObject:
   - component: {fileID: 1719554787}
   - component: {fileID: 1719554789}
   - component: {fileID: 1719554788}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NameBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15928,8 +15928,8 @@ Canvas:
   m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1600915479
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!65 &2551226678960366594
 BoxCollider:
@@ -16256,8 +16256,16 @@ MonoBehaviour:
       m_Action: Toggle Menu
       m_Flags: 0
     - m_Name: 
+      m_Id: ef81d661-2f8d-4944-9a6e-7ae979a512c3
+      m_Path: <XRController>{LeftHand}/{SecondaryButton}
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle Menu
+      m_Flags: 0
+    - m_Name: 
       m_Id: da5fd744-2900-4212-b9b9-2f1e2aef0956
-      m_Path: <Keyboard>/m
+      m_Path: <Keyboard>/escape
       m_Interactions: 
       m_Processors: 
       m_Groups: 
@@ -22752,6 +22760,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 326823219}
+  - {fileID: 7547197116836772053}
   m_Father: {fileID: 3247368875829507589}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4480464402940901185
@@ -23815,7 +23824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &4717087096587709595
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34265,19 +34274,19 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4717063695991562067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4}
-  m_LocalScale: {x: 0.012, y: 0.012, z: 0.012}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 2.501}
+  m_LocalScale: {x: 0.024999999, y: 0.024999999, z: 0.024999999}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3383760468856456482}
   - {fileID: 8906353170935497998}
   - {fileID: 7035724004564792705}
   - {fileID: 4085621891513795868}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4460962382818797788}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: -0.2466, y: -0.0321}
   m_SizeDelta: {x: 100, y: 81.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &7555999638103371773
@@ -40416,7 +40425,6 @@ SceneRoots:
   - {fileID: 1450969811}
   - {fileID: 373262433}
   - {fileID: 1339182867}
-  - {fileID: 7547197116836772053}
   - {fileID: 574152169}
   - {fileID: 7430962086177897053}
   - {fileID: 86392908}
