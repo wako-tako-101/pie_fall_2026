@@ -871,7 +871,7 @@ MonoBehaviour:
           m_MethodName: StartDialogue
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 4900000, guid: dd4abf689a9edd64c8c38b5e80b76755, type: 3}
+            m_ObjectArgument: {fileID: 4900000, guid: 89160cf2546e0544c83a40f9e500cd2c, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -889,7 +889,7 @@ MonoBehaviour:
           m_MethodName: StartDialogue
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 4900000, guid: dd4abf689a9edd64c8c38b5e80b76755, type: 3}
+            m_ObjectArgument: {fileID: 4900000, guid: c72d71fb2e691ab49b9dd05a1681e8b7, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -907,7 +907,7 @@ MonoBehaviour:
           m_MethodName: StartDialogue
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 4900000, guid: dd4abf689a9edd64c8c38b5e80b76755, type: 3}
+            m_ObjectArgument: {fileID: 4900000, guid: e6164b37e436f7b4d8be0d4ea7a87408, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -925,7 +925,7 @@ MonoBehaviour:
           m_MethodName: StartDialogue
           m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 4900000, guid: dd4abf689a9edd64c8c38b5e80b76755, type: 3}
+            m_ObjectArgument: {fileID: 4900000, guid: e0704d854e257484c82f555cd4145315, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
