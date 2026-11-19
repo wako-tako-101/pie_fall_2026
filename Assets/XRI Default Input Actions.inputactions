@@ -3940,7 +3940,7 @@
                 {
                     "name": "",
                     "id": "70a32e8e-880e-4a14-af97-de053bdaa2b0",
-                    "path": "<XRController>{RightHand}/primary2DAxis",
+                    "path": "<XRController>{LeftHand}/{Primary2DAxis}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
