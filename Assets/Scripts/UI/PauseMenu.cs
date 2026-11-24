@@ -20,8 +20,6 @@ public class PauseMenu : MonoBehaviour
     // [SerializeField] private bool usingSceneInt = false;
 
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         if(pauseAction != null)
