@@ -32,6 +32,7 @@ public class VRGuideCompanion : MonoBehaviour
 
         [Tooltip("Hook your dialog system up here (e.g. DialogueManager.StartDialogue).")]
         public UnityEvent onPlayerArrived;
+        public UnityEvent onVisitEnd;
     }
 
     private enum State { Guiding, Nagging, WaitingForPlayer, DialogActive, Pausing, Finished }
@@ -266,6 +267,10 @@ public class VRGuideCompanion : MonoBehaviour
             StartCoroutine(PauseThenAdvance());
         }
     }
+    public void TryAdvancing()
+    {
+        pointsOfInterest[currentIndex].onVisitEnd.Invoke();
+    }
 
     private IEnumerator PauseThenAdvance()
     {
@@ -287,6 +292,11 @@ public class VRGuideCompanion : MonoBehaviour
         {
             state = State.Guiding;
         }
+    }
+    public void TryAdvanceToNextPoint()
+    {
+        PuzzleManager gm = GameObject.FindWithTag("GM").GetComponent<PuzzleManager>();
+        if (gm.TutorialPass) AdvanceToNextPoint();
     }
 
     // ---- Rotation ----

@@ -878,9 +878,24 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    onVisitEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 86392904}
+          m_TargetAssemblyTypeName: VRGuideCompanion, Assembly-CSharp
+          m_MethodName: ResumeGuiding
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - regionName: Goal
     location: {fileID: 1743454600}
-    triggerRadius: 1.5
+    triggerRadius: 1.53
     onPlayerArrived:
       m_PersistentCalls:
         m_Calls:
@@ -896,6 +911,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    onVisitEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 86392904}
+          m_TargetAssemblyTypeName: VRGuideCompanion, Assembly-CSharp
+          m_MethodName: ResumeGuiding
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - regionName: TryTerminal
     location: {fileID: 830491575}
     triggerRadius: 3
@@ -909,6 +939,54 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 4900000, guid: e6164b37e436f7b4d8be0d4ea7a87408, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onVisitEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 373262435}
+          m_TargetAssemblyTypeName: AdHocDialogueEvent, Assembly-CSharp
+          m_MethodName: AtTerminalIsYes
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - regionName: TerminalFail
+    location: {fileID: 830491575}
+    triggerRadius: 2
+    onPlayerArrived:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 86392909}
+          m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+          m_MethodName: StartDialogue
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 4900000, guid: 6a21ab3352146cf4d9a18e02d1cb658c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onVisitEnd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 86392904}
+          m_TargetAssemblyTypeName: VRGuideCompanion, Assembly-CSharp
+          m_MethodName: ResumeGuiding
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -932,6 +1010,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    onVisitEnd:
+      m_PersistentCalls:
+        m_Calls: []
   smoothTime: 0.7
   maxSpeed: 2.5
   arriveDistance: 1.5
@@ -1079,7 +1160,19 @@ MonoBehaviour:
       m_Calls: []
   onDialogueEnded:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 86392904}
+        m_TargetAssemblyTypeName: VRGuideCompanion, Assembly-CSharp
+        m_MethodName: TryAdvancing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &98732024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,9 +2395,10 @@ GameObject:
   - component: {fileID: 373262428}
   - component: {fileID: 373262427}
   - component: {fileID: 373262434}
+  - component: {fileID: 373262435}
   m_Layer: 3
   m_Name: Terminal
-  m_TagString: Untagged
+  m_TagString: GM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2351,6 +2445,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1824235497}
         m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 373262434}
+        m_TargetAssemblyTypeName: PuzzleManager, Assembly-CSharp
+        m_MethodName: Pass
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 373262435}
+        m_TargetAssemblyTypeName: AdHocDialogueEvent, Assembly-CSharp
+        m_MethodName: DoTestShock
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2491,11 +2609,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb323173c36267547b5cb0c2f7149f00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
+  TutorialPass: 0
   FirePlate: 0
   WaterPlate: 0
   EarthPlate: 0
   WindPlate: 0
   door: {fileID: 1450969807}
+--- !u!114 &373262435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373262426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b192eb941db9c4396946e29ea76910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AdHocDialogueEvent
+  atTerminalForTest: 0
+  testDone: 0
+  DoTest:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 86392904}
+        m_TargetAssemblyTypeName: VRGuideCompanion, Assembly-CSharp
+        m_MethodName: ResumeGuiding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &377242531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7194,7 +7342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SigilCasting.SigilDrawer
   head: {fileID: 1376336100}
   drawPoint: {fileID: 1411434903}
-  recognizer: {fileID: 0}
+  recognizer: {fileID: 52526008}
   stroke: {fileID: 280359811}
   minPoints: 10
   drawDistance: 0.8
@@ -7358,7 +7506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1725167371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22673,7 +22821,7 @@ RectTransform:
   m_Father: {fileID: 1457682720966877748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -25141,7 +25289,7 @@ RectTransform:
   m_Father: {fileID: 4268875336540291449}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -28379,7 +28527,7 @@ RectTransform:
   m_Father: {fileID: 5859006286884719760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -30662,7 +30810,7 @@ RectTransform:
   m_Father: {fileID: 4948138962882111760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -31951,7 +32099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &4003210182333920152
 GameObject:
   m_ObjectHideFlags: 0
@@ -34433,7 +34581,7 @@ RectTransform:
   m_Father: {fileID: 1963528277811307164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -39003,7 +39151,7 @@ RectTransform:
   m_Father: {fileID: 7309075415803604026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

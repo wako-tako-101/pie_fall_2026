@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
+    public bool TutorialPass = false;
     public bool FirePlate = false;
     public bool WaterPlate = false;
     public bool EarthPlate = false;
@@ -19,5 +20,6 @@ public class PuzzleManager : MonoBehaviour
     public void EarthPlatePressed() => EarthPlate = true;
     public void WaterPlatePressed() => WaterPlate = true;
     public void FirePlatePressed() => FirePlate = true;
+    public void Pass() => TutorialPass = true;
 
 }

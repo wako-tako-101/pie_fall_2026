@@ -8,6 +8,7 @@ TagManager:
   - Water
   - Earth
   - Wind
+  - GM
   layers:
   - Default
   - TransparentFX
