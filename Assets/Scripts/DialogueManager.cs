@@ -142,6 +142,19 @@ public class DialogueManager : MonoBehaviour
         if (nameText != null) nameText.text = line.speaker;
         if (speechText != null) speechText.text = line.text;
     }
+    public void PreviousLine()
+
+    {
+        if (!IsActive) return;
+        currentIndex--;
+
+        if (currentIndex < 0) currentIndex = 0;
+
+        DialogueLine line = lines[currentIndex];
+
+        if (nameText != null) nameText.text = line.speaker;
+        if (speechText != null) speechText.text = line.text;
+    }
 
     private void EndDialogue()
     {
