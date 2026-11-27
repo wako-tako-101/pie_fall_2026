@@ -53,6 +53,7 @@ public class PauseMenu : MonoBehaviour
         if(pauseAction != null)
         {
             pauseAction.action.Disable();
+            Time.timeScale = 1f;
         }
     }
 
@@ -62,6 +63,7 @@ public class PauseMenu : MonoBehaviour
         if (pauseAction != null && pauseAction.action.WasPressedThisFrame())
         {
             TogglePause();
+            Debug.Log("Pause action pressed!");
         }
     }
 
@@ -111,19 +113,23 @@ public class PauseMenu : MonoBehaviour
     //going to the settings menu from the pause menu
     public void ToggleSettingsMenu()
     {
-        if(!isPaused || settingsMenu == null) return;
+        if(!isPaused) return;
 
-        SetVisibility(pauseMenuCanvasGroup, false);
+        SetVisibility(pauseMenuCanvasGroup, true);
+        SetVisibility(pausePanel, false);
         SetVisibility(settingsMenu, true);
+        Debug.Log("Settings menu opened.");
     }
 
     //returning to the pause menu from the settings menu
     public void BackToPauseMenu()
     {
-        if(!isPaused || pauseMenuCanvasGroup == null) return;
+        if(!isPaused) return;
 
+        SetVisibility(pauseMenuCanvasGroup, true);        
         SetVisibility(settingsMenu, false);
-        SetVisibility(pauseMenuCanvasGroup, true);
+        SetVisibility(pausePanel, true);
+        Debug.Log("Back to pause menu.");
     }
 
     public void SetVisibility(CanvasGroup group, bool isVisible)
