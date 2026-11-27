@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private GameObject pauseMenuGUI;
     [SerializeField] private CanvasGroup pauseMenuCanvasGroup;
+    [SerializeField] private CanvasGroup pausePanel;
+    [SerializeField] private CanvasGroup settingsMenu;
 
     [Header("Settings")]
     [Tooltip("The button that will open the pause menu.")]
@@ -21,14 +23,22 @@ public class PauseMenu : MonoBehaviour
     // [SerializeField] private bool usingSceneInt = false;
 
 
+    //initialize pause menu but keep hidden
     void Awake()
     {
-        if(pauseAction != null && pauseMenuCanvasGroup != null)
-        {
-            pauseMenuGUI.SetActive(false);
-        }
+        // if(pauseAction != null && pauseMenuCanvasGroup != null)
+        // {
+        //     pauseMenuGUI.SetActive(false);
+        // }
+
+        isPaused = false;
+        Time.timeScale = 1f;
+        SetVisibility(pauseMenuCanvasGroup, false);
+        SetVisibility(pausePanel, false);
+        SetVisibility(settingsMenu, false);
     }
 
+    //enable pause action when enabled
     private void OnEnable()
     {
         if(pauseAction != null)
@@ -37,6 +47,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //disable pause action when disabled
     private void OnDisable()
     {
         if(pauseAction != null)
@@ -54,33 +65,40 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //toggle pause functionality from the game
     public void TogglePause()
     {
         isPaused = !isPaused;
-        
-        if(pauseMenuGUI != null)
-        {
-            pauseMenuGUI.SetActive(isPaused);
-        }
 
-        if (isPaused)
-        {
-            ToggleMenu(true);
-            Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            ToggleMenu(false);
-            Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        Time.timeScale = isPaused ? 0f : 1f;
+        SetVisibility(pauseMenuCanvasGroup, isPaused);
+        SetVisibility(pausePanel, isPaused);
+        SetVisibility(settingsMenu, false);
+        
+        // if(pauseMenuGUI != null)
+        // {
+        //     pauseMenuGUI.SetActive(isPaused);
+        // }
+
+        // if (isPaused)
+        // {
+        //     ToggleMenu(true);
+        //     Time.timeScale = 0f;
+        //     Cursor.lockState = CursorLockMode.None;
+        //     Cursor.visible = true;
+        // }
+        // else
+        // {
+        //     ToggleMenu(false);
+        //     Time.timeScale = 1f;
+        //     Cursor.lockState = CursorLockMode.Locked;
+        //     Cursor.visible = false;
+        // }
 
         Debug.Log("Game Paused: " + isPaused);
     }
 
+    //toggle resume functionality from the pause menu
     public void ToggleResume()
     {
         if (isPaused)
@@ -90,24 +108,31 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void ToggleMenu(bool isVisible)
+    //going to the settings menu from the pause menu
+    public void ToggleSettingsMenu()
     {
-        if(pauseMenuGUI == null || pauseMenuCanvasGroup == null) return;
+        if(!isPaused || settingsMenu == null) return;
 
-        if(isVisible)
-        {            
-            pauseMenuGUI.SetActive(isVisible);
-            pauseMenuCanvasGroup.alpha = 1f;
-            pauseMenuCanvasGroup.interactable = isVisible;
-            pauseMenuCanvasGroup.blocksRaycasts = isVisible;
-        }
-        else
-        {
-            pauseMenuGUI.SetActive(isVisible);
-            pauseMenuCanvasGroup.alpha = 0f;
-            pauseMenuCanvasGroup.interactable = isVisible;
-            pauseMenuCanvasGroup.blocksRaycasts = isVisible;
-        }
+        SetVisibility(pauseMenuCanvasGroup, false);
+        SetVisibility(settingsMenu, true);
+    }
+
+    //returning to the pause menu from the settings menu
+    public void BackToPauseMenu()
+    {
+        if(!isPaused || pauseMenuCanvasGroup == null) return;
+
+        SetVisibility(settingsMenu, false);
+        SetVisibility(pauseMenuCanvasGroup, true);
+    }
+
+    public void SetVisibility(CanvasGroup group, bool isVisible)
+    {
+        if(group == null) return;
+        
+        group.alpha = isVisible ? 1f : 0f;
+        group.interactable = isVisible;
+        group.blocksRaycasts = isVisible;
     }
 
     //for going back to the main menu
