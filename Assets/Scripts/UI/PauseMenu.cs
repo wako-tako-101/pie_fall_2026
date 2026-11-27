@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] private GameObject pauseMenuGUI;
+    [SerializeField] private CanvasGroup pauseMenuCanvasGroup;
 
     [Header("Settings")]
     [Tooltip("The button that will open the pause menu.")]
@@ -22,7 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     void Awake()
     {
-        if(pauseAction != null)
+        if(pauseAction != null && pauseMenuCanvasGroup != null)
         {
             pauseMenuGUI.SetActive(false);
         }
@@ -64,12 +65,14 @@ public class PauseMenu : MonoBehaviour
 
         if (isPaused)
         {
+            ToggleMenu(true);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else
         {
+            ToggleMenu(false);
             Time.timeScale = 1f;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -84,6 +87,26 @@ public class PauseMenu : MonoBehaviour
         {
             TogglePause();
             Debug.Log("Game resumed.");
+        }
+    }
+
+    public void ToggleMenu(bool isVisible)
+    {
+        if(pauseMenuGUI == null || pauseMenuCanvasGroup == null) return;
+
+        if(isVisible)
+        {            
+            pauseMenuGUI.SetActive(isVisible);
+            pauseMenuCanvasGroup.alpha = 1f;
+            pauseMenuCanvasGroup.interactable = isVisible;
+            pauseMenuCanvasGroup.blocksRaycasts = isVisible;
+        }
+        else
+        {
+            pauseMenuGUI.SetActive(isVisible);
+            pauseMenuCanvasGroup.alpha = 0f;
+            pauseMenuCanvasGroup.interactable = isVisible;
+            pauseMenuCanvasGroup.blocksRaycasts = isVisible;
         }
     }
 
