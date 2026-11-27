@@ -228,7 +228,7 @@ MonoBehaviour:
   pointsOfInterest:
   - regionName: GameStart
     location: {fileID: 830491575}
-    triggerRadius: 3
+    triggerRadius: 51.65
     onPlayerArrived:
       m_PersistentCalls:
         m_Calls:
@@ -261,7 +261,7 @@ MonoBehaviour:
           m_CallState: 2
   - regionName: Goal
     location: {fileID: 1743454600}
-    triggerRadius: 1.53
+    triggerRadius: 2.06
     onPlayerArrived:
       m_PersistentCalls:
         m_Calls:
@@ -294,7 +294,7 @@ MonoBehaviour:
           m_CallState: 2
   - regionName: TryTerminal
     location: {fileID: 830491575}
-    triggerRadius: 3
+    triggerRadius: 3.85
     onPlayerArrived:
       m_PersistentCalls:
         m_Calls:
@@ -327,7 +327,7 @@ MonoBehaviour:
           m_CallState: 2
   - regionName: TerminalFail
     location: {fileID: 830491575}
-    triggerRadius: 2
+    triggerRadius: 2.94
     onPlayerArrived:
       m_PersistentCalls:
         m_Calls:
@@ -360,7 +360,7 @@ MonoBehaviour:
           m_CallState: 2
   - regionName: ThePuzzle
     location: {fileID: 574152169}
-    triggerRadius: 2
+    triggerRadius: 3.19
     onPlayerArrived:
       m_PersistentCalls:
         m_Calls:
@@ -383,11 +383,11 @@ MonoBehaviour:
   maxSpeed: 2.5
   arriveDistance: 1.5
   hoverHeight: 0
-  nagStartDistance: 2.09
+  nagStartDistance: 4.39
   pauseAfterDialog: 1
   waitForDialogToFinish: 1
   nagApproachDistance: 3.5
-  resumeLeadDistance: 2.5
+  resumeLeadDistance: 3
   nagRepositionDistance: 6
   nagAmplitude: 1
   nagFrequency: 4
