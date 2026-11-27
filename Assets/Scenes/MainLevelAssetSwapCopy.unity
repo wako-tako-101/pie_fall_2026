@@ -2256,6 +2256,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1725167370}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &467113116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4002,6 +4014,7 @@ Transform:
   - {fileID: 1489962655}
   - {fileID: 2019082575}
   - {fileID: 1725167371}
+  - {fileID: 6879589177967433546}
   m_Father: {fileID: 973397694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1137969349
@@ -6136,7 +6149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1725167371
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6152,7 +6165,6 @@ RectTransform:
   - {fileID: 2027338302}
   - {fileID: 1480254098}
   - {fileID: 102056805}
-  - {fileID: 6879589177967433546}
   m_Father: {fileID: 1137969348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -16990,14 +17002,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027338301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e67e7eff506b479439a9dc7a7591e2eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioSliderSettings
-  musicSlider: {fileID: 0}
-  sfxSlider: {fileID: 0}
-  masterSlider: {fileID: 0}
+  musicSlider: {fileID: 3362076042991635972}
+  sfxSlider: {fileID: 2379272189443106375}
+  masterSlider: {fileID: 7214763939607556602}
 --- !u!114 &2027338304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29170,7 +29182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &4003210182333920152
 GameObject:
   m_ObjectHideFlags: 0
@@ -37873,21 +37885,21 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3984553587356587961}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.501001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.5635264}
+  m_LocalScale: {x: 0.025000002, y: 0.024999999, z: 0.025000002}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4404331383120543200}
   - {fileID: 4289139912761202251}
   - {fileID: 1247150425317648113}
   - {fileID: 8168038265471873562}
-  m_Father: {fileID: 1725167371}
+  m_Father: {fileID: 1137969348}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 1.0855}
+  m_SizeDelta: {x: 100, y: 81.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6882891099086157455
 GameObject:
