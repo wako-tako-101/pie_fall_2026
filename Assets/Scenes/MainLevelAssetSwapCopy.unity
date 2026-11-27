@@ -228,7 +228,7 @@ MonoBehaviour:
   pointsOfInterest:
   - regionName: GameStart
     location: {fileID: 830491575}
-    triggerRadius: 51.65
+    triggerRadius: 58.4
     onPlayerArrived:
       m_PersistentCalls:
         m_Calls:
@@ -383,7 +383,7 @@ MonoBehaviour:
   maxSpeed: 2.5
   arriveDistance: 1.5
   hoverHeight: 0
-  nagStartDistance: 4.39
+  nagStartDistance: 999999
   pauseAfterDialog: 1
   waitForDialogToFinish: 1
   nagApproachDistance: 3.5
