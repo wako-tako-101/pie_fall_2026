@@ -1,5 +1,6 @@
 Whispy: Just zap this terminal and it should open that door!
-What? What do you mean you don't know how to use magic? YOU'RE A\nWIZARD HARRY!!
+What? What do you mean you don't know how to use magic? YOU'RE A\ WIZARD HARRY!!
 *Ahem*
-Sorry about that... It's simple really. Just reference you're book\nand draw the lightning bolt shaped sigil!
-THE GAME: Use the right controller's trigger to draw the lightning\nbolt in the air. Press \"A\" to load the spell or \"B\" to\ndiscard it. After successfully drawing the spell point\nthe controller at the terminal and press \"A.\"
+Sorry about that... It's simple really. Just reference you're book and draw the lightning bolt shaped sigil!
+THE GAME: Use the right controller's trigger to draw the lightning bolt in the air. Press "A" to load the spell or "B" todiscard it. 
+After successfully drawing the spell point the controller at the terminal and press "A."
