@@ -13050,8 +13050,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869069429}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1600915479
+  m_SortingLayer: 1
   m_SortingOrder: 30005
   m_SortAtRoot: 0
   m_Sort3DAs2D: 0
@@ -13069,12 +13069,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactors.Visuals.XRInteractorLineVisual
   m_LineWidth: 0.005
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 1
+  m_LineLength: 5
   m_AutoAdjustLineLength: 1
-  m_MinLineLength: 0.5
+  m_MinLineLength: 2
   m_UseDistanceToHitAsMaxLineLength: 1
-  m_LineRetractionDelay: 0.5
-  m_LineLengthChangeSpeed: 12
+  m_LineRetractionDelay: 0
+  m_LineLengthChangeSpeed: 999999
   m_WidthCurve:
     serializedVersion: 2
     m_Curve:
@@ -13194,12 +13194,12 @@ MonoBehaviour:
   m_SmoothMovement: 0
   m_FollowTightness: 10
   m_SnapThresholdDistance: 10
-  m_Reticle: {fileID: 0}
-  m_BlockedReticle: {fileID: 0}
+  m_Reticle: {fileID: 1411434902}
+  m_BlockedReticle: {fileID: 1411434902}
   m_StopLineAtFirstRaycastHit: 1
   m_StopLineAtSelection: 1
   m_SnapEndpointIfAvailable: 1
-  m_LineBendRatio: 0.5
+  m_LineBendRatio: 1
   m_BendingEnabledInteractionLayers:
     m_Bits: 4294967295
   m_OverrideInteractorLineOrigin: 0
